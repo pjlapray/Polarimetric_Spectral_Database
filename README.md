@@ -1,4 +1,4 @@
-# polarimetric_and_spectral_database
+# Polarimetric_&_Spectral_Database
 Please cite the following paper if using the database:
 
 Pierre-Jean Lapray, Luc Gendre, Alban Foulonneau, and Laurent Bigué
