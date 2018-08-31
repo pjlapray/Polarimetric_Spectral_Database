@@ -3,7 +3,7 @@ clear all;
 %dbstop if naninf
 
 %% Global parameters
-input_path = '../food/';
+input_path = '../macbeth_classic/';
 output_path = [input_path 'Results/'];
 if exist([input_path 'Results/']) == 0
     mkdir([input_path 'Results/'])
@@ -58,9 +58,9 @@ end
 
 %% Reflectance plot
 load 'M.mat'
-pixel_coor = [100 100];
-camera_responses(1,:) = multispectral_Unpol(100,100,:);
-reflectance = M' * camera_responses';
+pixel_coor = [562 567]; % x y
+pixel_area = mean(mean(multispectral_S0(pixel_coor(2):pixel_coor(2)+10,pixel_coor(1):pixel_coor(1)+10,:)));
+reflectance = M' * reshape(pixel_area,[6 1]);
 figure;
-plot(420:10:1000,reflectance);
+plot(420:10:1000,reflectance);ylim([0 2]);xlim([420 1000]);
 
